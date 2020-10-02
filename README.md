@@ -19,6 +19,7 @@ idk some fast running test I guess
 
 ## Tools
 **Languages:** Python, HTML, CSS, JavaScript
+
 **Frameworks:** Django (Python) with Django Channels 
 
 
