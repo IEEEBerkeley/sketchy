@@ -28,4 +28,4 @@ To run the website locally, clone the repo and ```cd``` into it, then run ```pyt
 
 
 ## License
-Copyright (c) 2020 developers and managers (listed above) and IEEE Student Branch at UC Berkeley. Released under the BSD 3-Clause License.
+Copyright (c) 2020 contributors (listed above) and IEEE Student Branch at UC Berkeley. Released under the BSD 3-Clause License.
