@@ -5,8 +5,6 @@ hmm what should we do?
 ## Contributors
 **Developers:** Allison Jung, Arthur Deng, Saransh Saini, Jessie Hong, Isabella Borkovic, Barnett Yang, Roy Huang, Arda Demirci
 
-**Advisors/Managers:** John Lee, Wilson Nguyen
-
 
 ## Preview
 
