@@ -26,8 +26,7 @@ idk some fast running test I guess
 ## How to run
 To run the website locally, clone the repo and ```cd``` into it, then run ```python manage.py runserver```. 
 
-If Django is not installed on your computer, install Django through pip with the following command in your virtual environment: ```pip install django```.
-
+Requirements: Python, PIP, Django, Django Channels, Virtual Environment (optional)
 
 ## License
 Copyright (c) 2020 contributors (listed above) and IEEE Student Branch at UC Berkeley. Released under the BSD 3-Clause License.
