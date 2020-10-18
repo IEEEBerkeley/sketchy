@@ -4,5 +4,6 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'home.html')
 
-def idktest(request):
-    return render(request, 'idktest.html')
+def rules(request):
+    print("working!")
+    return render(request, 'rules.html')
