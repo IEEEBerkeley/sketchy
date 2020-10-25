@@ -1,16 +1,28 @@
-# IEEE Berkeley Scribbl Project
-This full-stack project intends to ...
+## IEEE Berkeley - Scribbl Project
+hmm what should we do?
 
 
 ## Contributors
-Name1, Name2, Name3, ...
+**Developers:** Allison Jung, Arthur Deng, Saransh Saini, Jessie Hong, Isabella Borkovic, Barnett Yang, Roy Huang, Arda Demirci
 
 
-## Languages and Technologies
+## Preview
+<img>
 
-Python, HTML, CSS, JavaScript ...
+<img>
+
+
+
+## Tests Performed
+idk some fast running test I guess
+
+
+## Tools
+
 
 
 ## How to run
 
-To run the website locally, clone the repo and ```cd``` into it, then run ```python manage.py runserver```
+
+## License
+Copyright (c) 2020 contributors (listed above) and IEEE Student Branch at UC Berkeley. Released under the BSD 3-Clause License.
