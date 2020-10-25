@@ -1,0 +1,51 @@
+{
+  "name": "scribbl",
+  "version": "1.0.0",
+  "description": "hmm what should we do?",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "git pull && npm install && npm run build:sass",
+    "build": "npm run build:sass",
+    "start": "NODE_ENV=production node ./index.js",
+    "build:sass": "node-sass src/sass -o public/styles --output-style compressed",
+    "watch:express": "nodemon --watch ./lib/**/* ./index.js",
+    "watch:sass": "node-sass -w src/sass -o public/styles",
+    "watch:browser": "browser-sync start --config bs-config.js",
+    "watch": "npm-run-all --parallel build:sass watch:express watch:sass watch:browser",
+    "lint": "eslint --no-error-on-unmatched-pattern index.js public/scripts/*.js lib/**/.js",
+    "lint:fix": "eslint --no-error-on-unmatched-pattern index.js public/scripts/*.js lib/**/*.js --fix",
+    "beautify:hbs": "js-beautify -f src/views/**/*.hbs -r --type html -t",
+    "beautify:scss": "js-beautify -f src/sass/**/*.scss -r --type css -t",
+    "beautify": "npm-run-all --parallel beautify:scss beautify:hbs"
+  },
+  "precommit": ["lint", "beautify"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IEEEBerkeley/scribbl.git"
+  },
+  "author": "IEEE Berkeley",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/IEEEBerkeley/scribbl/issues"
+  },
+  "homepage": "https://github.com/IEEEBerkeley/scribbl#readme",
+  "dependencies": {
+    "bent": "^7.3.12",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mongoose": "^5.10.10",
+    "shortid": "^2.2.16",
+    "socket.io": "^2.3.0",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "eslint": "^7.12.0",
+    "js-beautify": "^1.13.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.6",
+    "npm-run-all": "^4.1.5",
+    "pre-commit": "^1.2.2"
+  }
+}
