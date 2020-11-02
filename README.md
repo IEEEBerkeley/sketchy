@@ -18,15 +18,10 @@ idk some fast running test I guess
 
 
 ## Tools
-**Languages:** Python, HTML, CSS, JavaScript
 
-**Frameworks:** Django (Python) with Django Channels 
 
 
 ## How to run
-To run the website locally, clone the repo and ```cd``` into it, then run ```python manage.py runserver```. 
-
-If Django is not installed on your computer, install Django through pip with the following command in your virtual environment: ```pip install django```.
 
 
 ## License
