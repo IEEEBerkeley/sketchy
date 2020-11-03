@@ -18,7 +18,10 @@
     "beautify:scss": "js-beautify -f src/sass/**/*.scss -r --type css -t",
     "beautify": "npm-run-all --parallel beautify:scss beautify:hbs"
   },
-  "precommit": ["lint", "beautify"],
+  "precommit": [
+    "lint",
+    "beautify"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IEEEBerkeley/scribbl.git"
