@@ -27,7 +27,7 @@ Install dependencies: `npm install`
 
 Run dev server: `npm run watch`
 
-**Note: **Compiled CSS found at `public/styles/all.css`
+**Note:** Compiled CSS found at `public/styles/all.css`
 
 ### Linting (Making code look nicer):
 
