@@ -18,10 +18,6 @@ hmm what should we do?
 idk some fast running test I guess 
 
 
-## Tools
-
-
-
 ## How to run
 
 Install dependencies: `npm install`
