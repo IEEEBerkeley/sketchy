@@ -3,3 +3,4 @@ __pycache__
 db.sqlite3
 node_modules
 public/styles/all.css
+.eslintrc.yml
