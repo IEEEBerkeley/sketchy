@@ -7,6 +7,7 @@
     "prestart": "git pull && npm install && npm run build:sass",
     "build": "npm run build:sass",
     "start": "NODE_ENV=production node ./index.js",
+    "dev": "nodemon ./index.js",
     "build:sass": "node-sass src/sass -o public/styles --output-style compressed",
     "watch:express": "nodemon --watch ./lib/**/* ./index.js",
     "watch:sass": "node-sass -w src/sass -o public/styles",
@@ -37,7 +38,9 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+    "moment": "^2.29.1",
     "mongoose": "^5.10.10",
+    "path": "^0.12.7",
     "shortid": "^2.2.16",
     "socket.io": "^2.3.0",
     "uuid": "^8.3.1"
