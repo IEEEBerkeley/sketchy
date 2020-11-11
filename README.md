@@ -1,6 +1,5 @@
 ## IEEE Berkeley - Scribbl Project
-hmm what should we do?
-
+description goes here
 
 ## Contributors
 **Developers:** Allison Jung, Arthur Deng, Saransh Saini, Jessie Hong, Isabella Borkovic, Barnett Yang, Roy Huang, Arda Demirci
