@@ -41,7 +41,7 @@ a {
 /* Chat Page */
 
 .chat-container {
-	max-width: 350px;
+	width: 400px;
 	max-height: 600px;
 	background: #fff;
 	margin: 30px auto;
@@ -86,14 +86,14 @@ a {
 }
 
 .chat-messages {
-	padding: 30px;
+	padding: 10px;
 	height: 487px;
 	overflow-y: scroll;
 }
 
 .chat-messages .message {
-	padding: 10px;
-	margin-bottom: 15px;
+	padding: 5px;
+	margin-bottom: 10px;
 	background-color: var(--light-color);
 	border-radius: 5px;
 }

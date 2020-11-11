@@ -11,28 +11,21 @@ const { username, room } = Qs.parse(location.search, {
 const socket = io();
 
 // Sanitize XSS
-const sanitize = input => {
-    let safe = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-    }
-    for (let key in safe) {
-        input = input.replace(new RegExp(key, 'g'), safe[key]);
-    }
-    return input;
-}
+const sanitize = (() => {
+    const t = document.createElement('div');
+    return input => (t.textContent = input, t.innerHTML);
+})()
 
 // Join chatroom
 socket.emit('joinRoom', { username, room });
 
-// Get room and users
+// Get room and users (Re-add when we need it)
+/*
 socket.on('roomUsers', ({ room, users }) => {
     outputRoomName(room);
     outputUsers(users);
 })
+*/
 
 // Message from server
 socket.on('message', message => {
@@ -61,11 +54,23 @@ chatForm.addEventListener('submit', e => {
 // Output message to DOM
 function outputMessage(message){
     const div = document.createElement('div');
-    div.classList.add('message');
-    div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
-	<p class="text">
-		${message.text}					
-    </p>`;
+    let color = 'black';
+    div.classList.add('message')
+    if (message.type !== 'normal') {
+        switch (message.type) {
+            case 'join':
+                color = 'green';
+                break;
+            case 'leave':
+                color = 'red';
+                break;
+        }
+        div.innerHTML = `<p class="text" style="color: ${color}">${message.text}</p>`;
+    } else {
+        div.innerHTML = `<p class="text">
+		    <b>${message.username}:</b> ${message.text}					
+        </p>`;
+    }
     document.querySelector('.chat-messages').appendChild(div);
 }
 

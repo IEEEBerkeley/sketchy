@@ -28,13 +28,10 @@ io.on('connection', socket => {
 
 		socket.join(user.room);
 
-		// Welcome current user
-		socket.emit('message', formatMessage(botName, 'Welcome to Sketchy.io!'));
-
 		// Broadcast when a user connects
 		socket.broadcast
 			.to(user.room)
-			.emit('message', formatMessage(botName, `${user.username} has joined`));
+			.emit('message', formatMessage(botName, `${user.username} has joined`, 'join'));
 
 		// Send users and room info
 		io.to(user.room).emit('roomUsers', {
@@ -48,7 +45,7 @@ io.on('connection', socket => {
 		const user = userLeave(socket.id);
 
 		if (user) {
-			io.to(user.room).emit('message', formatMessage(botName, `${user.username} has left`));
+			io.to(user.room).emit('message', formatMessage(botName, `${user.username} has left`, 'leave'));
 
 			// Send users and room info
 			io.to(user.room).emit('roomUsers', {

@@ -7,6 +7,7 @@
     "prestart": "git pull && npm install && npm run build:sass",
     "build": "npm run build:sass",
     "start": "NODE_ENV=production node ./index.js",
+    "dev": "nodemon ./index.js",
     "build:sass": "node-sass src/sass -o public/styles --output-style compressed",
     "watch:express": "nodemon --watch ./lib/**/* ./index.js",
     "watch:sass": "node-sass -w src/sass -o public/styles",
