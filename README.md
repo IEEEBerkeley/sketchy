@@ -5,6 +5,7 @@ hmm what should we do?
 ## Contributors
 **Developers:** Allison Jung, Arthur Deng, Saransh Saini, Jessie Hong, Isabella Borkovic, Barnett Yang, Roy Huang, Arda Demirci
 
+**Advisors:** Wilson Nguyen, John Lee
 
 ## Preview
 <img> 
@@ -17,17 +18,13 @@ hmm what should we do?
 idk some fast running test I guess 
 
 
-## Tools
-
-
-
 ## How to run
 
 Install dependencies: `npm install`
 
 Run dev server: `npm run watch`
 
-**Note: **Compiled CSS found at `public/styles/all.css`
+**Note:** Compiled CSS found at `public/styles/all.css`
 
 ### Linting (Making code look nicer):
 
