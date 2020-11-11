@@ -1,4 +1,4 @@
-## IEEE Berkeley - Scribbl Project
+## IEEE Berkeley - Sketchy Project
 description goes here
 
 ## Contributors
