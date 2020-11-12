@@ -1,9 +1,8 @@
-const canvas = document.querySelector('#canvas');
+const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 canvas.width = 800;  // Or whatever frontend wants
 canvas.height = 500; // Or whatever frontend wants
-const socket = io();
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms)); // Asynchronous sleep
 
 let data = new Queue();

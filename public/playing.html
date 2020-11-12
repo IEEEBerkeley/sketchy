@@ -19,7 +19,7 @@ h1 {
 
 
 .canvas {
-  float: left;                  /* Add this */
+  float: left;
   width: 650px;
   height: 600px;
   background-color: #F09A9D;
@@ -107,8 +107,10 @@ h1 {
       </div>
 
       <!-- Canvas App -->
-      <div class='canvas'>
-        <canvas id="canvas"></canvas>
+      <div style="float: left; width: 650px;
+      height: 600px;
+      background-color: #F09A9D;">
+        <canvas style="border: 2px solid black;" id="canvas"></canvas>
       </div>
 
       <!-- Chat App -->
@@ -134,6 +136,7 @@ h1 {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
 integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w=="
 crossorigin="anonymous"></script>
+<script src="js/queue.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/canvas.js"></script>
