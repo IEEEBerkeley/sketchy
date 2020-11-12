@@ -10,6 +10,7 @@
 h1 {
   font-size: 24px;
 }
+
 .menu {
   height: 100px;
   background-color: #B2D6FF;    /* Medium blue */
@@ -104,8 +105,12 @@ h1 {
         <div class = "player"> Player 8 </div>
       </div>
 
-      <div class='canvas'>Canvas</div>
-<!--<div class='chat'>Chat</div>-->
+      <!-- Canvas App -->
+      <div class='canvas'>
+        <canvas id="canvas"></canvas>
+      </div>
+
+      <!-- Chat App -->
       <div class="chat-container">
         <header class="chat-header">
           <h1> Guessing Phase</h1>
@@ -119,17 +124,18 @@ h1 {
           </form>
         </div>
       </div>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
-        integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w=="
-        crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"
-        integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ=="
-        crossorigin="anonymous"></script>
-      <script src="js/main.js"></script>
     </div>
   </div>                                  <!-- Add this -->
 
   <div class='footer'>Footer</div>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
+integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w=="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"
+integrity="sha512-AcZyhRP/tbAEsXCCGlziPun5iFvcSUpEz2jKkx0blkYKbxU81F+iq8FURwPn1sYFeksJ+sDDrI5XujsqSobWdQ=="
+crossorigin="anonymous"></script>
+<script src="js/chat.js"></script>
+<script src="js/canvas.js"></script>
 </html>

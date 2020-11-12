@@ -61,6 +61,10 @@ io.on('connection', socket => {
 
 		io.to(user.room).emit('message', formatMessage(user.username, msg));
 	});
+
+	socket.on('draw', (data) => {
+        io.emit('draw', data);
+    });
 });
 
 server.listen(PORT, () => console.log('Active on port:', PORT));
