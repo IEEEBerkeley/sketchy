@@ -1,8 +1,8 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 800;  // Or whatever frontend wants
-canvas.height = 500; // Or whatever frontend wants
+canvas.width = 650;  // Or whatever frontend wants
+canvas.height = 600; // Or whatever frontend wants
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms)); // Asynchronous sleep
 
 
