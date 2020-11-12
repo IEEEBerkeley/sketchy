@@ -5,6 +5,9 @@ canvas.width = 800;  // Or whatever frontend wants
 canvas.height = 500; // Or whatever frontend wants
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms)); // Asynchronous sleep
 
+
+var rect = canvas.getBoundingClientRect();
+
 let data = new Queue();
 
 let painting = false;
@@ -12,10 +15,10 @@ let painting = false;
 async function startPosition(e) {
     if (painting === false) {
         socket.emit('draw', {
-            'x1': e.clientX,
-            'y1': e.clientY,
-            'x2': e.clientX,
-            'y2': e.clientY,
+            'x1': e.clientX - rect.left,
+            'y1': e.clientY - rect.top,
+            'x2': e.clientX - rect.left,
+            'y2': e.clientY - rect.top,
             'start': true
         });
     }
@@ -36,13 +39,13 @@ async function draw(e) {
 
     let delta = {'start': false};
 
-    delta['x1'] = e.clientX;
-    delta['y1'] = e.clientY;
+    delta['x1'] = e.clientX - rect.left;
+    delta['y1'] = e.clientY - rect.top;
     ctx.lineTo(delta['x1'], delta['y1']);
     ctx.stroke();
     ctx.beginPath();
-    delta['x2'] = e.clientX;
-    delta['y2'] = e.clientY;
+    delta['x2'] = e.clientX - rect.left;
+    delta['y2'] = e.clientY - rect.top;
     ctx.moveTo(delta['x2'], delta['y2']);
 
     socket.emit('draw', delta);
