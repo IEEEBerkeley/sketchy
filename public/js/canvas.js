@@ -81,5 +81,6 @@ async function draw_queue() {
 canvas.addEventListener("mousedown", startPosition);
 canvas.addEventListener("mouseup", finishedPosition);
 canvas.addEventListener("mousemove", draw);
+canvas.addEventListener('mouseout', finishedPosition);
 
 setInterval(draw_queue, 10);
