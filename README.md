@@ -1,5 +1,5 @@
 ## IEEE Berkeley - Sketchy Project
-description goes here
+Sketchy is a free online game that takes inspiration from the games skribbl.io and Among Us. There are two teams: the imposters and the crewmates. Each game consists of several drawing rounds. The crewmates win if they score a certain number of points or catch all of the impostors. The imposters win if they score a certain number of points.
 
 ## Contributors
 **Developers:** Allison Jung, Arthur Deng, Saransh Saini, Jessie Hong, Isabella Borkovic, Barnett Yang, Roy Huang, Arda Demirci
@@ -14,18 +14,18 @@ description goes here
 
 
 ## Tests Performed
-idk some fast running test I guess 
+. 
 
 
 ## How to run
 
 Install dependencies: `npm install`
 
-Run dev server: `npm run watch`
+Run development server: `npm run watch`
 
 **Note:** Compiled CSS found at `public/styles/all.css`
 
-### Linting (Making code look nicer):
+## Linting (Making code look nicer):
 
 JavaScript:
 
@@ -40,7 +40,6 @@ Handlebars & SCSS:
 `npm run beautify:scss`
 
 `npm run beautify:hbs`
-
 
 
 ## License

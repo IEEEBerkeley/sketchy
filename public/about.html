@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
     <title>Sketchy</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <head>
     <link rel="icon" type="image/png" href="img/favicon.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -53,6 +52,7 @@ html, body {
     font-weight: 500;
     color: #ECECEC;
 }
+
 .button {
     display: flex;
     align-items: center;
@@ -60,12 +60,12 @@ html, body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-    width: 100px;
-    height: 60px;
+    width: 10vw;
+    height: 5vw;
     border-radius: 30px;
     border: 3px solid #24305E;
     background-color: #f9d751;
-    font-size: 18px;
+    font-size: 2vw;
     text-align: center;
     color: black;
     box-shadow: 0 9px #374785;
@@ -85,13 +85,12 @@ html, body {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;*/
-    width: 120px;
-    height: 50px;
+    width: 10vw;
+    height: 5vw;
     border-radius: 25px;
     border: 3px solid #24305E;
     background-color: #374785;
-    font-size: 14px;
-    /*text-align: center;*/
+    font-size: 1.2vw;
     color: black;
     box-shadow: 0 7px #374785;
 }
@@ -103,10 +102,9 @@ html, body {
   transform: translateY(2px);
 }
 
-
 .buttons {
     text-align: center; 
-    margin-top: 40px; 
+    margin-top: 5vw; 
 }
 
 .create, .howto {
@@ -154,28 +152,36 @@ html, body {
       <div class="row" style="max-width: 100%;">
         <div class="columnS" style="height:100px;"></div>
         <div class="columnC" style="height:100vh;">
-            <div style="font-size: 40px;"><b>About</b></div>
-            <p>
+          <div class="buttons">
+            <button class="create smallbutton" input type="button" onclick="location.href='index.html'">Go Back</button>
+          </div>
+            <div class="title" style="font-size: 5vw;">
+                ABOUT
+            </div>
+            <div class="description" style="font-size: 1.5vw; text-align: left;">
               Sketchy is a free online game that takes inspiration from the games skribbl.io and Among Us. There are two teams: the imposters and the crewmates. 
               Each game consists of several drawing rounds. The crewmates win if they score a certain number of points or catch all of the impostors. The imposters win 
               if they score a certain number of points. 
-            </p>
-            <div style="font-size: 40px;"><b>How to Play</b></div>
-            <p>
+            </div>
+            <div class="title" style="font-size: 5vw;">
+              HOW TO PLAY
+            </div>
+            <div class="description" style="font-size: 1.5vw; text-align: left;">
+              <p>
                 Imposters are chosen randomly at the start of the game. Every round, players take turns drawing a given word, while the rest of the participants attempt to guess the word. 
                 The imposters score points based on the number of incorrect guesses, while the crewmates score points based on the number of correct guesses. Imposters can try to guess words 
                 incorrectly or use different sabotage mechanisms to hurt the crewmates’ score. 
-            </p>
-            <p>
-            At the end of each round, there is a discussion where the group can decide who to vote out as the imposter. Players can also call emergency meetings during the middle of rounds to vote 
-            out imposters. Dead crewmates can still guess and contribute to their team’s score, but the contribution will be less significant. The imposters win if they can survive or score enough 
-            points. The crewmates win if they eliminate all of the imposters or score enough points. 
-            </p>
+              </p>
+              <p>
+                At the end of each round, there is a discussion where the group can decide who to vote out as the imposter. Players can also call emergency meetings during the middle of rounds to vote 
+                out imposters. Dead crewmates can still guess and contribute to their team’s score, but the contribution will be less significant. The imposters win if they can survive or score enough 
+                points. The crewmates win if they eliminate all of the imposters or score enough points. 
+              </p>
+            </div>
         </div>
         <div class="columnS" style="height: 100px;"></div>
+      </div>
     </div>
-    </div>
-        
 </body>
 </html>
 
