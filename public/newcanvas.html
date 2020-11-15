@@ -6,6 +6,9 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
 
     <!-- CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js"></script>
+    <link rel="stylesheet" href="styles/newcanvas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="styles/chat.css">
     <link rel="stylesheet" href="styles/playingpage.css">
@@ -36,7 +39,35 @@
 
       <!-- Canvas App -->
       <div class='canvas'>
-        <canvas id="canvas"></canvas>
+        <div class="app">
+            <div id="canvas-wrapper"></div>
+            <div class="controls">
+                <div class="type">
+                  <input type="radio" name="pen-type" id="pen-brush" checked>
+                  <label for="pen-brush">
+                    <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                  </label>
+                  <input type="radio" name="pen-type" id="pen-eraser">
+                  <label for="pen-eraser">
+                    <i class="fa fa-eraser" aria-hidden="true"></i>
+                  </label>
+                </div>
+                <div class="size">
+                  <label for="pen-size"> Size </label>
+                  <input type="range" id="pen-size" min="1" max="10">
+                </div>
+                <div class="color">
+                  <label for="pen-color"> Color </label>
+                  <input type="color" id="pen-color" value="#000">
+                </div>
+                <div class="actions">
+                  <button id="undo">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                  </button>
+                  <button id="reset-canvas"> Reset </button>
+                </div>
+              </div>
+          </div>
       </div>
 
       <!-- Chat App -->
@@ -61,9 +92,8 @@
 
 <!-- JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"></script>
-<script src="js/queue.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/chat.js"></script>
-<script src="js/canvas.js"></script>
+<script src="js/newcanvas.js"></script>
 
 </html>
