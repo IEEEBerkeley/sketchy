@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sketchy Canvas</title>
+  <link rel="stylesheet" href="sketchyboard.css">
+</head>
+<body>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js"></script> 
+	<div class="app">
+	  <div class="controls">
+	    <div class="title"> Sketchyboard </div>
+	    <div class="type">
+	      <input type="radio" name="pen-type" id="pen-brush" checked>
+	      <label for="pen-brush">
+	        <i class="fa fa-paint-brush" aria-hidden="true"></i>
+	      </label>
+	      <input type="radio" name="pen-type" id="pen-eraser">
+	      <label for="pen-eraser">
+	        <i class="fa fa-eraser" aria-hidden="true"></i>
+	      </label>
+	    </div>
+	    <div class="size">
+	      <label for="pen-size"> Size </label>
+	      <input type="range" id="pen-size" min="1" max="80">
+	    </div>
+	    <div class="color">
+	      <label for="pen-color"> Color </label>
+	      <input type="color" id="pen-color" value="#000">
+	    </div>
+	    <div class="actions">
+	      <button id="undo">
+	        <i class="fa fa-undo" aria-hidden="true"></i>
+	      </button>
+	      <button id="reset-canvas"> Reset </button>
+	    </div>
+	  </div>
+	  <div id="canvas-wrapper"></div>
+	</div>
+	<script src="sketchying.js"></script>
+</body>
+</html>
