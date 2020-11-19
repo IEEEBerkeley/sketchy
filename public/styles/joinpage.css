@@ -6,6 +6,11 @@
 	--light-color: #e6e9ff;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
+	--classic-color: #4D6D9A;
+	--pink-light: #ff8f8f;
+	--pink-dark: #F76C6C;
+	--light-yellow: #ffe682;
+	--dark-yellow: #f9d751;
 }
 
 * {
@@ -17,8 +22,8 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-	background: var(--light-color);
-	margin: 20px;
+	background: white;
+	margin: 0px;
 }
 
 ul {
@@ -29,13 +34,40 @@ a {
 	text-decoration: none;
 }
 
-.btn {
+/*.btn {
 	cursor: pointer;
 	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
+	background: var(--dark-yellow);
+	color: white;
 	border: 0;
 	font-size: 17px;
+}*/
+.btn {
+	cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 30px;
+    height: 5%;
+    border-radius: 30px;
+    border: 3px solid #24305E;
+    font-size: 1.5vw;
+    text-align: center;
+    color: white;
+    box-shadow: 0 9px var(--classic-color);
+    padding: 5px 15px;
+    background: var(--dark-yellow);
+
+}
+
+.btn:hover {background-color:var(--light-yellow);}
+.btn:active {
+  background-color: var(--light-yellow);
+  box-shadow: 0 5px var(--classic-color);
+  transform: translateY(4px);
 }
 
 /* Chat Page */
@@ -128,20 +160,20 @@ a {
 .join-container {
 	max-width: 500px;
 	margin: 80px auto;
-	color: #fff;
+	color: var(--dark-yellow);
 }
 
 .join-header {
 	text-align: center;
 	padding: 20px;
-	background: var(--dark-color-a);
+	background: var(--pink-light);
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
 
 .join-main {
 	padding: 30px 40px;
-	background: var(--dark-color-b);
+	background: var(--pink-dark);
 }
 
 .join-main p {
@@ -172,8 +204,8 @@ a {
 }
 
 .join-main .btn {
-	margin-top: 20px;
-	width: 100%;
+	margin-top: 0px;
+	width: 35%;
 }
 
 @media (max-width: 700px) {
@@ -187,11 +219,11 @@ a {
 }
 
 
-.main-bg {
-    background-color: #4D6D9A;
-  /*maybe change height back to 100vh IDK*/
+ .main-bg {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    position: absolute;
+    background-color: var(--classic-color);
   }
 
   .container {
@@ -211,4 +243,4 @@ a {
     width: 100px;
     text-align:center; 
     margin: auto;
-  }
+  }*/
