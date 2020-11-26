@@ -1,6 +1,8 @@
 require('dotenv').config();
 
 const path = require('path');
+
+// Const { v4: uuidv4 } = require('uuid');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
@@ -21,11 +23,10 @@ app.use(express.static(`${__dirname}/public`));
 
 // Run when client connects
 io.on('connection', socket => {
-	socket.on('joinRoom', ({
-		username, room
-	}) => {
-		const user = userJoin(socket.id, username, room);
-
+	socket.on('joinRoom', async data => {
+		const room = data.roomName;
+		const username = data.username;
+		const user = await userJoin(socket.id, username, room).catch(console.error);
 		socket.join(user.room);
 
 		// Broadcast when a user connects
@@ -36,13 +37,13 @@ io.on('connection', socket => {
 		// Send users and room info
 		io.to(user.room).emit('roomUsers', {
 			room: user.room,
-			users: getRoomUsers(user.room)
+			users: await getRoomUsers(user.room).catch(console.error)
 		});
 	});
 
 	// Runs when client disconnects
-	socket.on('disconnect', () => {
-		const user = userLeave(socket.id);
+	socket.on('disconnect', async () => {
+		const user = await userLeave(socket.id).catch(console.error);
 
 		if (user) {
 			io.to(user.room).emit('message', formatMessage(botName, `${user.username} has left`, 'leave'));
@@ -50,14 +51,14 @@ io.on('connection', socket => {
 			// Send users and room info
 			io.to(user.room).emit('roomUsers', {
 				room: user.room,
-				users: getRoomUsers(user.room)
+				users: await getRoomUsers(user.room).catch(console.error)
 			});
 		}
 	});
 
 	// Listen for chatMessage
-	socket.on('chatMessage', msg => {
-		const user = getCurrentUser(socket.id);
+	socket.on('chatMessage', async msg => {
+		const user = await getCurrentUser(socket.id);
 
 		io.to(user.room).emit('message', formatMessage(user.username, msg));
 	});
