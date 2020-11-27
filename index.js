@@ -42,7 +42,7 @@ io.on('connection', socket => {
 	});
 
 	// Runs when client disconnects
-	socket.on('disconnect', async () => {
+	socket.on('disconnecting', async () => {
 		const user = await userLeave(socket.id).catch(console.error);
 
 		if (user) {

@@ -5,9 +5,9 @@ const client = redis.createClient(REDIS_PORT);
 
 // currently stored in redis
 
+// promisified redis commands
 const hset = util.promisify(client.hset).bind(client);
 const hget = util.promisify(client.hget).bind(client);
-const del = util.promisify(client.del).bind(client);
 const hdel = util.promisify(client.hdel).bind(client);
 const hvals = util.promisify(client.hvals).bind(client);
 
@@ -46,7 +46,6 @@ async function userJoin(id, username, room) {
 
     // Add room mapped to id (field) and username (val)
     await hset(room, id, username);
-    console.log(client.hget(id, 'room'));
     return user;
 }
 
@@ -59,11 +58,13 @@ async function getCurrentUser(id) {
 
 // User leaves chat
 async function userLeave(id) {
-    const currentRoom = client.hget(id, 'room');
+    const currentRoom = await hget(id, 'room');
     console.log(currentRoom);
     const user = await getCurrentUser(id);
     //await del(id);
     await hdel(currentRoom, id);
+    console.log(id);
+    console.log(user);
     return user;
 }
 
