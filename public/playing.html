@@ -26,14 +26,6 @@
 
       <!-- Players -->
       <div class = "players">
-        <div class = "player"> Player 1 </div>
-        <div class = "player"> Player 2 </div>
-        <div class = "player"> Player 3 </div>
-        <div class = "player"> Player 4 </div>
-        <div class = "player"> Player 5 </div>
-        <div class = "player"> Player 6 </div>
-        <div class = "player"> Player 7 </div>
-        <div class = "player"> Player 8 </div>
       </div>
 
       <!-- Canvas App -->
@@ -51,7 +43,13 @@
         </main>
         <div class="chat-form-container">
           <form id="chat-form">
-            <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
+            <input 
+              id="msg" 
+              type="text" 
+              placeholder="Enter Message" 
+              required autocomplete="off"
+              maxlength="60" 
+            />
           </form>
         </div>
       </div>
@@ -61,8 +59,10 @@
   <div class='footer'>Footer</div>
 </body>
 
-<!-- JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
+integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w=="
+crossorigin="anonymous"></script>
+<script src="js/save.js"></script>
 <script src="js/queue.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/chat.js"></script>

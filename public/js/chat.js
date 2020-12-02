@@ -1,7 +1,7 @@
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
-const userList = document.getElementById('users');
+const userList = document.querySelector('.players');
 
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
@@ -16,20 +16,24 @@ const sanitize = (() => {
     return input => (t.textContent = input, t.innerHTML);
 })()
 
+// Store player info locally
+playerSave(username, room);
+
 // Join chatroom
-socket.emit('joinRoom', { username, room });
+const info = JSON.parse(localStorage.getItem('user-info'));
+console.log(info);
+socket.emit('joinRoom', info);
 
 // Get room and users (Re-add when we need it)
-/*
 socket.on('roomUsers', ({ room, users }) => {
-    outputRoomName(room);
+    //outputRoomName(room);
+    console.log(users);
     outputUsers(users);
+    console.log(userList);
 })
-*/
 
 // Message from server
 socket.on('message', message => {
-    console.log(message);
     outputMessage(message);
 
     // Scroll Down
@@ -71,7 +75,7 @@ function outputMessage(message){
 		    <b>${message.username}:</b> ${message.text}					
         </p>`;
     }
-    document.querySelector('.chat-messages').appendChild(div);
+    chatMessages.appendChild(div);
 }
 
 // Add room name to DOM
@@ -82,6 +86,6 @@ function outputRoomName(room) {
 // Add users to DOM
 function outputUsers(users) {
     userList.innerHTML = `
-        ${users.map(user => `<li>${user.username}</li>`).join('')}
+        ${users.map(user => `<div class="player">${user}</div>`).join('')}
     `;
 }
