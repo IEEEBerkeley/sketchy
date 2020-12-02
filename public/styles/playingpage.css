@@ -1,0 +1,77 @@
+h1 {
+font-size: 24px;
+}
+
+.menu {
+height: 100px;
+background-color: #B2D6FF;    /* Medium blue */
+}
+
+.canvas {
+float: left;
+width: 650px;
+height: 600px;
+background-color: #F09A9D;
+border: 1px solid black;
+}
+
+.chat {
+float: left;                  /* Add this */
+width: 250px;
+height: 600px;
+background-color: #F5CF8E;
+}
+
+.footer {
+clear: both;            /* Add this */
+height: 100px;
+background-color: #D6E9FE;
+}
+
+.page {
+width: 1250px;
+margin: 0 auto;
+}
+
+.container {
+overflow: hidden;
+background-color: #EAEDF0;
+}
+
+.players {
+float: left;
+margin: 0 auto;
+width: 200px;
+height: 600px;
+background-color: #D0FFD0;
+}
+
+.player{
+float: left;
+width: 100%;
+height: 11.5%;
+background-color: #D0FFD1;
+border-style: outset;
+border-color: white;
+}
+
+.time {
+float: left;
+width: 20%;
+height: 100%;
+background-color: #D0E8FF
+}
+
+.word {
+float: left;
+width: 60%;
+height: 100%;
+background-color: #D1D0FF
+}
+
+.scoreboard{
+float: left;
+width: 20%;
+height: 100%;
+background-color: #FFD0FC
+}
