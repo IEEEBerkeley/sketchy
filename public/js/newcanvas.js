@@ -40,11 +40,10 @@ let undoSave = [];
 let newStroke = false;
 let strokeCnt = 0;
 _("#reset-canvas").addEventListener("click", function() {
-    points.push({
-        brushType: 'reset'
-    });
     socket.emit('draw', {
-        "point": points[points.length - 1]
+        "point": {
+            brushType: 'reset'
+        }
     });
 });
 _("#undo").addEventListener("click", function() {
@@ -120,6 +119,7 @@ setInterval(function() {
 socket.on('draw', (data) => {
     let point = data.point;
     if (point.brushType == 'reset') {
+        points.push(point);
         background(255);
     } else if (point.brushType == 'undo') {
         undo();
@@ -127,6 +127,7 @@ socket.on('draw', (data) => {
         console.log("check");
         redo(point.redoData);
     } else {
+        points.push(point)
         stroke(point.brushColor);
         strokeWeight(point.brushSize);
         line(point.px, point.py, point.x, point.y);
