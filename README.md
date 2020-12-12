@@ -7,11 +7,15 @@ Sketchy is a free online game that takes inspiration from the games skribbl.io a
 **Advisors:** Wilson Nguyen, John Lee
 
 ## Preview
-<img> 
 
-<img>
-
-
+<p float="left">
+  <img src="https://github.com/IEEEBerkeley/sketchy/blob/master/public/img/1.png" width="400" />
+  <img src="https://github.com/IEEEBerkeley/sketchy/blob/master/public/img/2.png" width="400" /> 
+</p>
+<p float="left">
+  <img src="https://github.com/IEEEBerkeley/sketchy/blob/master/public/img/3.png" width="400" />
+  <img src="https://github.com/IEEEBerkeley/sketchy/blob/master/public/img/4.png" width="400" /> 
+</p>
 
 ## Tests Performed
 . 
