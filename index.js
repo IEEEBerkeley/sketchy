@@ -6,6 +6,9 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
+const {
+	hset
+} = require('./utils/redis');
 const formatMessage = require('./utils/messages.js');
 const {
 	userJoin, getCurrentUser, userLeave, getRoomUsers
@@ -66,6 +69,12 @@ io.on('connection', socket => {
 	// Listen for canvas updates (draw)
 	socket.on('draw', data => {
 		io.emit('draw', data);
+	});
+
+	// Listen for room settings
+	socket.on('room-settings', data => {
+		hset(data.room, 'numImposters', data.numImposters);
+		hset(data.room, 'noundTime', data.roundTime);
 	});
 });
 
