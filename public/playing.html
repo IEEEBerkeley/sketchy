@@ -13,13 +13,22 @@
   </head>
 
   <body>
-  <div class='menu'>
-    <div class = "time"> Time left 
-      <p id="timer"></p>
+    <div class='menu'>
+      <div class = "time"> Time left 
+        <p id="timer"></p>
+      </div>
+        <div class="word" >
+  
+          <div class="centerword">
+            <p id="word-text">centered text</p>
+          </div>
+          <button onclick="wordFill()">new word</button>
+          <button onclick="cancel()">cancel</button>
+  
+  
+        </div>
+      <div class = "scoreboard"> Score </div>
     </div>
-    <div class = "word"> _ _ A _ S </div>
-    <div class = "scoreboard"> Score </div>
-  </div>
 
   <div class='container'> 
     <div class='page'>
@@ -69,5 +78,6 @@ crossorigin="anonymous"></script>
 <script src="js/chat.js"></script>
 <script src="js/canvas.js"></script>
 <script src="js/timer.js"></script>
+<script src="js/wordfill.js"></script>
 
 </html>
