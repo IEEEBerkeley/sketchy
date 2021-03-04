@@ -23,6 +23,8 @@ Sketchy is a free online game that takes inspiration from the games skribbl.io a
 
 ## How to run
 
+Make sure Redis is installed. If not, `brew install redis && brew services start redis`
+
 Install dependencies: `npm install`
 
 Run development server: `npm run watch`
