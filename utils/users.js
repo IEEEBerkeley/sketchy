@@ -1,15 +1,11 @@
-const redis = require('redis');
-const util = require('util');
-const REDIS_PORT = process.env.PORT || 6379;
-const client = redis.createClient(REDIS_PORT);
+const {
+    hset, hget, hvals, hdel
+} = require('./redis');
 
 // currently stored in redis
 
 // promisified redis commands
-const hset = util.promisify(client.hset).bind(client);
-const hget = util.promisify(client.hget).bind(client);
-const hdel = util.promisify(client.hdel).bind(client);
-const hvals = util.promisify(client.hvals).bind(client);
+
 
 // function hset(key, field, value) {
 //     return new Promise((resolve, reject) => {
