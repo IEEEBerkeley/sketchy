@@ -4,19 +4,22 @@
 <head>
     <meta charset='UTF-8' />
     <title>Sketchy</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="styles/joinpage.css" />
 </head>
 
+
 <body style="font-family: 'Noto Sans JP', sans-serif;">
     <div class="main-bg">
         <div class="join-container">
             <header class="join-header">
-                <h1><i class="fas fa-smile"></i> Sketchy</h1>
+                <h1> Join a Game </h1>
             </header>
             <main class="join-main">
-                <form action="newcanvas.html">
+                <form action="playing.html">
                     <div class="form-control">
                         <label for="username">Username (Max 32 Char)</label>
                         <input type="text" name="username" id="username" placeholder="Enter username..." required minlength="1" maxlength="26" />
@@ -25,7 +28,8 @@
                         <label for="room">Room</label>
                         <input type="text" name="room" id="room-name" placeholder="Enter 6-letter room code..." required minlength="6" maxlength="6" onkeyup="this.value = this.value.toUpperCase();" />
                     </div>
-                    <button type="submit" class="btn">Join Chat</button>
+                    <button style="font-family: 'Noto Sans JP', sans-serif;" type="submit" class="btn">Join!</button>
+                    <button style="font-family: 'Noto Sans JP', sans-serif;" type="submit" class="btn">Create Game</button>
                 </form>
             </main>
         </div>

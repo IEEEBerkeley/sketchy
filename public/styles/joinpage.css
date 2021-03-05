@@ -20,7 +20,7 @@
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Roboto', sans-serif;*/
 	font-size: 16px;
 	background: white;
 	margin: 0px;
@@ -159,16 +159,16 @@ a {
 /* Join Page */
 .join-container {
 	max-width: 500px;
-	margin: 80px auto;
-	color: var(--dark-yellow);
+	margin: 150px auto;
+	color: white;
 }
 
 .join-header {
 	text-align: center;
 	padding: 20px;
 	background: var(--pink-light);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
 }
 
 .join-main {
