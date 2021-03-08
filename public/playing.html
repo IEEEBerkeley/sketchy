@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset='UTF-8'/>
+
+<head>
+    <meta charset='UTF-8' />
     <title>Sketchy - Game in progress</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
 
@@ -10,74 +11,98 @@
     <link rel="stylesheet" href="styles/chat.css">
     <link rel="stylesheet" href="styles/playingpage.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+    <link rel="stylesheet" href="styles/newcanvas.css">
+</head>
 
-  <body>
+<body>
     <div class='menu'>
-      <div class = "time"> Time left 
-        <p id="timer"></p>
-      </div>
-        <div class="word" >
-  
-          <div class="centerword">
-            <p id="word-text">centered text</p>
-          </div>
-          <button onclick="wordFill()">new word</button>
-          <button onclick="cancel()">cancel</button>
-  
-  
+        <div class="time"> Time left
+            <p id="timer"></p>
         </div>
-      <div class = "scoreboard"> Score </div>
+        <div class="word">
+
+            <div class="centerword">
+                <p id="word-text">centered text</p>
+            </div>
+            <button onclick="wordFill()">new word</button>
+            <button onclick="cancel()">cancel</button>
+
+
+        </div>
+        <div class="scoreboard"> Score </div>
     </div>
 
-  <div class='container'> 
-    <div class='page'>
+    <div class='container'>
+        <div class='page'>
 
-      <!-- Players -->
-      <div class = "players">
-        <div class = "player"> Player 1 </div>
-      </div>
+            <!-- Players -->
+            <div class="players">
+                <div class="player"> Player 1 </div>
+            </div>
 
-      <!-- Canvas App -->
-      <div class='canvas'>
-        <canvas id="canvas"></canvas>
-      </div>
-
-      <!-- Chat App -->
-      <div class="chat-container">
-        <header class="chat-header">
-          <h1> Guessing Phase</h1>
-        </header>
-        <main class="chat-main">
-          <div class="chat-messages"></div>
-        </main>
-        <div class="chat-form-container">
-          <form id="chat-form">
-            <input 
-              id="msg" 
-              type="text" 
-              placeholder="Enter Message" 
-              required autocomplete="off"
-              maxlength="60" 
-            />
-          </form>
+            <!-- Canvas App -->
+            <div class='canvas'>
+                <div class="app">
+                    <div id="canvas-wrapper"></div>
+                    <div class="controls">
+                        <div class="type">
+                            <input type="radio" name="pen-type" id="pen-brush" checked>
+                            <label for="pen-brush">
+                    <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                  </label>
+                            <input type="radio" name="pen-type" id="pen-eraser">
+                            <label for="pen-eraser">
+                    <i class="fa fa-eraser" aria-hidden="true"></i>
+                  </label>
+                        </div>
+                        <div class="size">
+                            <label for="pen-size"> Size </label>
+                            <input type="range" id="pen-size" min="1" max="10">
+                        </div>
+                        <div class="color">
+                            <label for="pen-color"> Color </label>
+                            <input type="color" id="pen-color" value="#000">
+                        </div>
+                        <div class="actions">
+                            <button id="undo">
+                    <i class="fa fa-undo" aria-hidden="true"></i>
+                  </button>
+                            <button id="redo">
+                    <i class="fa fa-redo" aria-hidden="true"></i>
+                  </button>
+                            <button id="reset-canvas"> Reset </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chat App -->
+            <div class="chat-container">
+                <header class="chat-header">
+                    <h1> Guessing Phase</h1>
+                </header>
+                <main class="chat-main">
+                    <div class="chat-messages"></div>
+                </main>
+                <div class="chat-form-container">
+                    <form id="chat-form">
+                        <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" maxlength="60" />
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div> 
 
-  <div class='footer'>Footer</div>
+    <div class='footer'>Footer</div>
 </body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
-integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w=="
-crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w==" crossorigin="anonymous"></script>
 <script src="js/save.js"></script>
 <script src="js/queue.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/chat.js"></script>
-<script src="js/canvas.js"></script>
+<script src="js/newcanvas.js"></script>
 <script src="js/timer.js"></script>
 <script src="js/wordfill.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js"></script>
 
 </html>

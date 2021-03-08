@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
+
+<head>
     <meta charset='UTF-8' />
     <title>Sketchy</title>
-    <link rel="icon" type="image/png" href="img/favicon.png"/>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
     <script src="js/lobby.js"></script>
-  </head>
+</head>
 
-  <style>
-  </style>
+<style>
 
-    <body>
-      <div id='settings'>
+</style>
+
+<body>
+    <div id='settings'>
         <h2>Settings bar</h2>
         <div>
-          <label for="roundtime">Round Time</label>
-          <select id="roundtime">
+            <label for="roundtime">Round Time</label>
+            <select id="roundtime">
             <option value="15">15 Seconds</option>
             <option value="30" selected>30 Seconds</option>
             <option value="45">45 Seconds</option>
@@ -23,17 +25,18 @@
           </select>
         </div>
         <div>
-          <label for="numImposters">Number of Imposters</label>
-          <select id="numImposters">
+            <label for="numImposters">Number of Imposters</label>
+            <select id="numImposters">
             <option values="1">1</option>
             <option values="2">2</option>
             <option values="3">3</option>
           </select>
         </div>
-        
+
 
         <div> only viewable to host</div>
         <button style="border: 1px solid black; background-color: lightgrey; width: 100px; text-align:center;" type="button" id="button-send" onclick="location.href = 'playing.html';">Start Game</button>
-      </div>
-    </body>
+    </div>
+</body>
+
 </html>

@@ -11,7 +11,10 @@ const {
 } = require('./utils/redis');
 const formatMessage = require('./utils/messages.js');
 const {
-	userJoin, getCurrentUser, userLeave, getRoomUsers
+	userJoin,
+	getCurrentUser,
+	userLeave,
+	getRoomUsers
 } = require('./utils/users.js');
 
 const PORT = process.env.PORT || 8080;
