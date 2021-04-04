@@ -1,13 +1,16 @@
-import { customAlphabet } from "nanoid";
-import "./styles.css";
+//import { customAlphabet } from "nanoid";
+//import "./styles.css";
 
-const getId = customAlphabet("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 6);
-const id = getId();
+//const getId = customAlphabet("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 6);
+//const id = getId();
 
-document.getElementById("room-code").innerHTML = `<div>${id}</div>`;
+const { nanoid } = require('nanoid')
+const id = nanoid(6);
+
+//document.getElementById("room-code").innerHTML = `<div>${id}</div>`;
 
 //const id = nanoid();
-//document.getElementById("room-code").innerHTML = `<div>${id}</div>`;
+document.getElementById("room-code").innerHTML = `<div>${id}</div>`;
 
 //const nanoid = require('nanoid');
 //function generate_room_code() {
