@@ -4,7 +4,7 @@ Sketchy is a free online game that takes inspiration from the games skribbl.io a
 ## Contributors
 **Developers:** Allison Jung, Arthur Deng, Saransh Saini, Jessie Hong, Isabella Borkovic, Barnett Yang, Roy Huang, Arda Demirci, Vivian Hsu
 
-**Advisors:** Wilson Nguyen, John Lee
+**Advisors:** Wilson Nguyen, John Lee, Maanuj Vora
 
 ## Preview
 
