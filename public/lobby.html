@@ -5,41 +5,74 @@
     <meta charset='UTF-8' />
     <title>Sketchy</title>
     <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="styles/lobby.css" />
     <script src="js/lobby.js"></script>
 </head>
 
-<style>
-
-</style>
-
-<body>
-    <div id='settings'>
-        <h2>Settings bar</h2>
-        <div>
-            <label for="roundtime">Round Time</label>
+<body style="font-family: 'Noto Sans JP', sans-serif;">
+  <div class='main'>
+    <div class='setting'>
+        <header class="setting-header">
+          <h1> SETTINGS </h1>
+        </header>
+        <div class='round-time'>
+            <label for="roundtime" class="round-label">Round Time</label>
             <select id="roundtime">
-            <option value="15">15 Seconds</option>
-            <option value="30" selected>30 Seconds</option>
-            <option value="45">45 Seconds</option>
-            <option value="60">60 Seconds</option>
-          </select>
+              <option value="15">15 Seconds</option>
+              <option value="30" selected>30 Seconds</option>
+              <option value="45">45 Seconds</option>
+              <option value="60">60 Seconds</option>
+            </select>
         </div>
         <div>
-            <label for="numImposters">Number of Imposters</label>
+            <label for="numImposters" class="num-imposters">Number of Imposters</label>
             <select id="numImposters">
-            <option values="1">1</option>
-            <option values="2">2</option>
-            <option values="3">3</option>
-          </select>
+              <option values="1">1</option>
+              <option values="2">2</option>
+              <option values="3">3</option>
+            </select>
         </div>
-
-
-        <div> only viewable to host</div>
-        <button style="border: 1px solid black; background-color: lightgrey; width: 100px; text-align:center;" type="button" id="button-send" onclick="location.href = 'playing.html';">Start Game</button>
+        <div class="host-view"> only viewable to host</div>
+        <button type="button" class="button-send" onclick="location.href = 'playing.html';"> Start </button>
+        <div class="rm"> Your Room Code is </div>
+        <div id="app"></div>
     </div>
 
-    <div> Your Room Code is </div>
-    <div id="app"></div>
+    <div class='players'>
+      <header class="player-header">
+        <h1> PLAYERS </h1>
+      </header>
+      <div>
+        <header class="player1">
+          <h5> player1 </h5>
+        </header>
+        <header class="player2">
+          <h5> player2 </h5>
+        </header>
+        <header class="player3">
+          <h5> player3 </h5>
+        </header>
+        <header class="player4">
+          <h5> player4 </h5>
+        </header>
+        <header class="player5">
+          <h5> player5 </h5>
+        </header>
+        <header class="player6">
+          <h5> player6 </h5>
+        </header>
+        <header class="player7">
+          <h5> player7 </h5>
+        </header>
+        <header class="player8">
+          <h5> player8 </h5>
+        </header>
+        <header class="player9">
+          <h5> player9 </h5>
+        </header>
+      </div>
+    </div>
+  </div>
 </body>
 <script type="module" src="/js/roomcode.js"></script>
 </html>
