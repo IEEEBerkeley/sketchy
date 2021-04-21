@@ -2,9 +2,9 @@
 Sketchy is a free online game that takes inspiration from the games skribbl.io and Among Us. There are two teams: the imposters and the crewmates. Each game consists of several drawing rounds. The crewmates win if they score a certain number of points or catch all of the impostors. The imposters win if they score a certain number of points.
 
 ## Contributors
-**Developers:** Allison Jung, Arthur Deng, Saransh Saini, Jessie Hong, Isabella Borkovic, Barnett Yang, Roy Huang, Arda Demirci
+**Developers:** Allison Jung, Arthur Deng, Saransh Saini, Jessie Hong, Isabella Borkovic, Barnett Yang, Roy Huang, Arda Demirci, Vivian Hsu
 
-**Advisors:** Wilson Nguyen, John Lee
+**Advisors:** Wilson Nguyen, John Lee, Maanuj Vora
 
 ## Preview
 
