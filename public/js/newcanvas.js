@@ -1,3 +1,16 @@
+/**
+ * 
+ * @author Arthur Deng
+ * 
+ * This JS file handles the canvas application. 
+ * Features supported:
+ * - undo
+ * - redo
+ * - reset
+ * - change colour
+ * - change brush size
+ * - erase
+ */
 function _(selector) {
     return document.querySelector(selector);
 }
@@ -30,7 +43,7 @@ function mouseDragged() {
     updated = false;
     undoSave = [];
 }
-// let ctx = drawingContext;
+
 let type = _("#pen-brush").checked ? "brush" : "eraser";
 let size = parseInt(_("#pen-size").value);
 let color = _("#pen-color").value;
@@ -39,6 +52,7 @@ let points = [];
 let undoSave = [];
 let newStroke = false;
 let strokeCnt = 0;
+
 _("#reset-canvas").addEventListener("click", function() {
     socket.emit('draw', {
         "point": {
@@ -46,6 +60,7 @@ _("#reset-canvas").addEventListener("click", function() {
         }
     });
 });
+
 _("#undo").addEventListener("click", function() {
     socket.emit('draw', {
         "point": {
@@ -55,8 +70,9 @@ _("#undo").addEventListener("click", function() {
 });
 
 _("#redo").addEventListener("click", function() {
-    console.log(undoSave);
-    if (undoSave.length == 0) return;
+    if (undoSave.length == 0) {
+        return;
+    }
     let redoPoints = [];
     let point = undoSave.pop();
     let stroke = point.stroke;
@@ -75,19 +91,27 @@ _("#redo").addEventListener("click", function() {
 })
 
 function undo() {
+    if (points.size == 0) {
+        return;
+    }
     let point = points.pop();
+    //console.log("STROKE COUNT" + strokeCnt + "   " + point.stroke);
     let last = point.stroke;
+
     while (points.length > 0 && point.stroke == last) {
         undoSave.push(point);
         point = points.pop();
     }
-    if (points.length > 0 && point.brushType != 'reset') points.push(point); //add the last point back in
+    if (points.length > 0 && point.brushType != 'reset') {
+        points.push(point); //add the last point back in
+    }
     //redraws the whole canvas
     background(255);
     drawPoints(points);
 }
 
-function redo(redoData) {
+function redo(point) {
+    let redoData = point.redoData;
     console.log(redoData);
     drawPoints(redoData);
     points = points.concat(redoData);
@@ -107,7 +131,6 @@ function mousePressed() {
     strokeCnt++;
 }
 
-
 setInterval(function() {
     if (updated) return;
     socket.emit('draw', {
@@ -125,7 +148,7 @@ socket.on('draw', (data) => {
         undo();
     } else if (point.brushType == 'redo') {
         console.log("check");
-        redo(point.redoData);
+        redo(point);
     } else {
         points.push(point)
         stroke(point.brushColor);
