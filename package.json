@@ -1,7 +1,7 @@
 {
   "name": "sketchy",
   "version": "1.0.0",
-  "description": "hmm what should we do?",
+  "description": "sketchy game",
   "main": "index.js",
   "scripts": {
     "prestart": "git pull && npm install && npm run build:sass",
@@ -35,12 +35,14 @@
   "homepage": "https://github.com/IEEEBerkeley/sketchy#readme",
   "dependencies": {
     "bent": "^7.3.12",
+    "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "ioredis": "^4.19.2",
     "moment": "^2.29.1",
-    "mongoose": "^5.10.10",
+    "mongoose": "^5.12.2",
+    "nanoid": "^3.1.22",
     "path": "^0.12.7",
     "redis": "^3.0.2",
     "shortid": "^2.2.16",
@@ -48,7 +50,9 @@
     "uuid": "^8.3.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.13",
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1",
+    "browser-sync": "^2.26.14",
     "eslint": "^7.12.0",
     "js-beautify": "^1.13.0",
     "node-sass": "^4.14.1",
