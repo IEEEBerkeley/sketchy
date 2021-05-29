@@ -5,7 +5,8 @@
     <meta charset='UTF-8' />
     <title>Sketchy</title>
     <link rel="icon" type="image/png" href="img/favicon.png" />
-    <script src="js/lobby.js"></script>
+
+    <link rel="stylesheet" href="styles/chat.css">
 </head>
 
 <style>
@@ -37,6 +38,25 @@
         <div> only viewable to host</div>
         <button style="border: 1px solid black; background-color: lightgrey; width: 100px; text-align:center;" type="button" id="button-send" onclick="location.href = 'playing.html';">Start Game</button>
     </div>
+
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1> Lobby Chat </h1>
+        </header>
+        <main class="chat-main">
+            <div class="chat-messages"></div>
+        </main>
+        <div class="chat-form-container">
+            <form id="chat-form">
+                <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" maxlength="60" />
+            </form>
+        </div>
+    </div>
 </body>
+
+<script src="js/lobby.js"></script>
+<script src="js/queue.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/chat.js"></script>
 
 </html>
