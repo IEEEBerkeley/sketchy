@@ -4,6 +4,7 @@ const roomName = document.getElementById('room-name');
 const userList = document.querySelector('.players');
 
 // Get username and room from URL
+// TODO: move this to lobby.js
 const { username, room } = Qs.parse(location.search, {
     ignoreQueryPrefix: true
 });
@@ -16,10 +17,19 @@ const sanitize = (() => {
     return input => (t.textContent = input, t.innerHTML);
 })()
 
-// Store player info locally
+// Store player info locally, see save.js
+// TODO: move this to lobby.js
 playerSave(username, room);
 
-// Join chatroom
+/**
+ * Join chatroom
+ * user-info schema:
+ * {
+ *   roomName,
+ *   username
+ * }
+ * TODO: move joinRoom into lobby.js
+ *  */ 
 const info = JSON.parse(localStorage.getItem('user-info'));
 console.log(info);
 socket.emit('joinRoom', info);
@@ -32,7 +42,7 @@ socket.on('roomUsers', ({ room, users }) => {
     console.log(userList);
 })
 
-// Message from server
+// Receives message from backend, output to DOM
 socket.on('message', message => {
     outputMessage(message);
 
