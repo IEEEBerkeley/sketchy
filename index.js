@@ -32,6 +32,8 @@ io.on('connection', socket => {
 	socket.on('joinRoom', async data => {
 		const room = data.roomName;
 		const username = data.username;
+		
+		// userJoin adds user info into redis, socket.join adds user to socket room
 		const user = await userJoin(socket.id, username, room).catch(console.error);
 		socket.join(user.room);
 

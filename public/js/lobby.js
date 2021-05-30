@@ -1,11 +1,23 @@
 let data = {};
 
+// QS Parse and Save playerInfo locally HERE
+
+/**
+ * Initialize lobby
+ * Create room code
+ * Make listeners
+ * TODO: make room join method and call it in init
+ */
 function init() {
-    const room = createRoom();
+    const room = createRoomCode();
     document.getElementById('button-send').addEventListener('click', send);
 };
 
-function createRoom() {
+/**
+ * Generate random room code from A-Z of length 6
+ * @returns generated room code
+ */
+function createRoomCode() {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const charactersLength = 6;
@@ -15,6 +27,12 @@ function createRoom() {
     return result;
 };
 
+/**
+ * Send room setting info to backend, including
+ * - room code
+ * - number of imposters
+ * - round time
+ */
 function send() {
     let numImposters = document.getElementById('numImposters');
     let roundtime = document.getElementById('roundtime');
