@@ -9,9 +9,39 @@ let data = {};
  * TODO: make room join method and call it in init
  */
 function init() {
-    const room = createRoomCode();
-    document.getElementById('button-send').addEventListener('click', send);
+    // see create() and join(). the two are the same for now. 
 };
+
+function create() {
+    /**
+     * user clicked the 'create game' button. 
+     * creates a lobby with a randomly generated room code.
+     */
+    const { username, room } = Qs.parse(location.search, {
+        ignoreQueryPrefix: true
+    });
+    playerSave(username, room);
+
+    const info = JSON.parse(localStorage.getItem('user-info'));
+    socket.emit('joinRoom', info);
+    document.getElementById('button-send').addEventListener('click', send);
+}
+
+function join() {
+    /**
+     * user entered a valid 6 letter room code. 
+     * joins an existing room. 
+     */
+
+    const { username, room } = Qs.parse(location.search, {
+        ignoreQueryPrefix: true
+    });
+    playerSave(username, room);
+
+    const info = JSON.parse(localStorage.getItem('user-info'));
+    socket.emit('joinRoom', info);
+    document.getElementById('button-send').addEventListener('click', send);
+}
 
 /**
  * Generate random room code from A-Z of length 6
